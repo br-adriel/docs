@@ -110,3 +110,48 @@ A seguir há uma tabela resumindo o comportamento dos três modificadores.
 | Protegido   | #             | Pode acessar   | Pode acessar     | Não pode acessar |
 
 ## Sobrecarga vs Polimorfismo
+
+Apesar de ambos tratarem de métodos que possuem o mesmo nome, sobrecarga e polimorfismo
+não são a mesma coisa.
+
+A sobrecarga trata de métodos com o mesmo nome que estão em uma mesma classe.
+
+Entretanto,apesar do nome ser o mesmo, os atributos passados para cada um são diferentes,
+que é como a linguagem diferencia os dois e decide qual executar quando é solicitado.
+
+Isso permite a execução de diferentes implementações que servem para o mesmo propósito de
+acordo com a entrada passada.
+
+Já o polimorfismo trata da redeclaração de métodos já existentes na classe pai, de forma a
+completamente sobrescrevê-lo.
+
+### Exemplo
+
+Por exemplo, imaginemos um cenário onde tempos uma classe `SerVivo` com o método `falar`.
+
+Quando `falar` é executado, é exibida a mensagem `"faz barulhos"`.
+
+Agora imaginemos que tenhamos uma outra classe chamada `Humano` que herda da classe
+`SerVivo`.
+
+Se apenas herdamos da classe e não fizermos mais nada, ao executar o método `falar` em
+`Humano` ele também exibirá `"faz barulhos"`.
+
+Isso não é tão interessante, podemos então sobrescrever esse método para que quando `falar`
+seja executado em humano, seja exibida a mensagem `"Olá"`.
+
+Para sobrescrever esse método, basta criar um método com o memso nome na classe `Humano`,
+ou seja, `Humano` ganha um novo método chamado `falar` que sobrescreve o método vindo de
+`SerVivo` apenas nessa classe. Isso é Polimorfismo.
+
+Agora imagine que queiramos passar um nome para que `Humano` cumprimente ao falar, mas ao
+mesmo tempo queremos que quando não passarmos nenhum nome, ele continue exibindo apenas
+`"Olá"`.
+
+Para fazer isso podemos implementar mais um método com o memso nome `falar`, mas dessa
+vez recebendo o argumento `nome`, ou seja, agora temos dois métodos: `falar()` e `falar(nome)`.
+
+Quando chamamos `falar()` a primeira implementração é executada, quando chamamos 
+`falar(fulano)` a segunda implementação é chamada. Os dois existem ao mesmo tempo
+e o sistema é quem determina qual será executado com base nos argumentos passados
+em sua chamada. Isso é Sobrecarga.
