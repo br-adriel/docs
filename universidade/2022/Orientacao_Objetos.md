@@ -69,4 +69,44 @@ possui uma outra class/objeto como um de seus atributos.
 
 ## Modificadores de acesso
 
+Os modificadores de acesso são os responsáveis por determinar se os elementos de uma
+classe, e consequentemente seus objetos, serão acessiveís por outras classes.
+
+Há três deles: Público, Privado e Protegido.
+
+### Público
+
+Os atributos e métodos definidos como público podem ser acessados pela própria
+classe e por qualquer outra.
+
+Normalmente esse modificador é evitado nos atributos das classes para que eles não
+possam ser acessados diretamente e assim seja possível a aplicação do encapsulamento.
+
+Esse modificador é representado pelo símbolo `+`.
+
+### Privado
+
+Os atributos e métodos definidos como privado podem ser acessados apenas pela própria
+classe, nem mesmo às classes "filhas" conseguem acessar o que é posto como privado.
+
+Normalmente esse modificador é adotado nos atributos das classes mas evitado nos métodos.
+
+Esse modificador é representado pelo símbolo `-`.
+
+### Protegido
+
+Similar ao modificador privado, os atributos e métodos definidos como protegido podem
+ser acessados apenas pela própria classe e por suas filhas, isto é, pelas classes que
+herdam dela.
+
+Esse modificador é representado pelo símbolo `#`.
+
+A seguir há uma tabela resumindo o comportamento dos três modificadores.
+
+| Modificador | Representação | Pŕopria classe | Herdeiras        | Outras classes   |
+| ----------- | ------------- | -------------- | ---------------- | ---------------- |
+| Público     | +             | Pode acessar   | Pode acessar     | Pode acessar     |
+| Privado     | -             | Pode acessar   | Não pode acessar | Não pode acessar |
+| Protegido   | #             | Pode acessar   | Pode acessar     | Não pode acessar |
+
 ## Sobrecarga vs Polimorfismo
